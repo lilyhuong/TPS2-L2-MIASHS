@@ -3,23 +3,23 @@ from random import randint
 def lancerDé(n):
     return [randint (1,6)]
 print (lancerDé (1))
-
-#exercise3.2
+#Exercise 3.2
+from random import randint
 def lancersEnserie(n):
     res = []
+    res2 = [0,0,0,0,0,0]
     i = 0
     for i in  range (0,n):
-        b = randint (1,6)
-        res.append (b)
-        res.count(1)
-        res.count(2)
-        res.count(3)
-        res.count(4)
-        res.count(5)
-        res.count(6)
-        i += 1
-    return (res)
-print (lancersEnserie(20))
+        #index = randint(1,6) - 1
+        #res2[index] += 1
+        res.append(randint(1,6))
+
+    for i in range(0,6):
+        res2[i] = res.count(i+1)
+        
+    return (res2)
+print (lancersEnserie(1000000))
+
 
 #exercise3.3
 def listesomme(l1,l2):
@@ -34,6 +34,13 @@ def listesomme(l1,l2):
 l11 = [1,5,6,7,8]
 l22 = [2,5,6,8,7]
 print (listesomme(l11,l22))
+#Exercise4.1
+def puissnant2(x):
+    return x*x
+def fonction2liste(carre,liste):
+    return [carre(x) for x in liste]
+list2 = [3,5,9]
+print(fonction2liste(puissnant2,list2))
 
              
              
